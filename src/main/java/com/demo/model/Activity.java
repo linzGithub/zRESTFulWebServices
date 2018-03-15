@@ -5,6 +5,7 @@
  */
 package com.demo.model;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -18,6 +19,7 @@ public class Activity {
     /**
      * @return the description
      */
+    @XmlElement(name="desc")
     public String getDescription() {
         return description;
     }
