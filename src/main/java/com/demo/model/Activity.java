@@ -16,6 +16,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Activity {
 
+    private String description;
+    private int duration;
+    private String id;
+    private User user;
+    
     /**
      * @return the description
      */
@@ -43,8 +48,33 @@ public class Activity {
      */
     public void setDuration(int duration) {
         this.duration = duration;
+    } 
+
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
     }
     
-    private String description;
-    private int duration;
+        /**
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

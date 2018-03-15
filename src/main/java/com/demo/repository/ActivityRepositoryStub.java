@@ -6,6 +6,7 @@
 package com.demo.repository;
 
 import com.demo.model.Activity;
+import com.demo.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,4 +36,25 @@ public class ActivityRepositoryStub implements ActivityRepository {
         
         return activities;
     }
+
+    @Override
+    public Activity findActivity(String activityId) {
+        //database query put here, now use static for demo
+        Activity activity1 = new Activity();
+        
+        activity1.setId("1234");
+        activity1.setDescription("Swimming");
+        activity1.setDuration(55);
+                
+        User user = new User();
+        user.setId("5678");
+        user.setName("Bryan");
+        
+        activity1.setUser(user);
+        
+        return activity1;
+    }
+    
+    
+    
 }

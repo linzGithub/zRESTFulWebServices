@@ -15,5 +15,7 @@ import java.util.List;
 public interface ActivityRepository {
 
     List<Activity> findAllActivities();
+
+    public Activity findActivity(String activityId);
     
 }
