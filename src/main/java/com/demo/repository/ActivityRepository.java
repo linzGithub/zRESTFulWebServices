@@ -17,5 +17,7 @@ public interface ActivityRepository {
     List<Activity> findAllActivities();
 
     public Activity findActivity(String activityId);
+
+    public void create(Activity activity);
     
 }
