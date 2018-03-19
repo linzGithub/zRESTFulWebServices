@@ -7,7 +7,6 @@ package com.demo.client;
 
 import com.demo.model.Activity;
 import java.util.List;
-import javax.net.ssl.SSLEngineResult;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -15,8 +14,6 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-import jdk.net.SocketFlow;
 
 /**
  *
