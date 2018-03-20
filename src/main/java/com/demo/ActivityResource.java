@@ -34,6 +34,7 @@ public class ActivityResource {
     @GET
     @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     public List<Activity> getAllActivities() {
+        
         return activityRepository.findAllActivities();
     }
     
@@ -41,6 +42,8 @@ public class ActivityResource {
     @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     @Path("{activityId}") //http://localhost:8080/zRESTFulWebServices/webresources/activities/1234
     public Response getActivity(@PathParam("activityId") String activityId) {
+        
+        System.out.println("Getting activity ID:" + activityId);
         
         if (activityId == null || activityId.length() < 4) {
             return Response.status(Status.BAD_REQUEST).build();
