@@ -39,6 +39,12 @@ public class ActivityRepositoryStub implements ActivityRepository {
 
     @Override
     public Activity findActivity(String activityId) {
+        
+        if (activityId.equals("7777")) {
+            
+            return null;
+        }
+        
         //database query put here, now use static for demo
         Activity activity1 = new Activity();
         

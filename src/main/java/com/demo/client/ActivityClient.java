@@ -46,11 +46,11 @@ public class ActivityClient {
         WebTarget target = client.target("http://localhost:8080/zRESTFulWebServices/webresources/");
         
         List<Activity> response = target.path("activities").request(MediaType.APPLICATION_JSON).get(new GenericType<List<Activity>>() {});
-        
+             
         return response;
     }
 
-    Activity create(Activity activity) {
+    public Activity create(Activity activity) {
         
         //http://localhost:8080/zRESTFulWebServices/webresources/activities/activity
         WebTarget target = client.target("http://localhost:8080/zRESTFulWebServices/webresources/");
