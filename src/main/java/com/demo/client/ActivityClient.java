@@ -88,7 +88,7 @@ public class ActivityClient {
         
         if (response.getStatus() != 200) {
             
-            //throw new RuntimeException(response.getStatus() + ": there was an error on the server.");
+            throw new RuntimeException(response.getStatus() + ": there was an error on the server.");
         }
         
     }

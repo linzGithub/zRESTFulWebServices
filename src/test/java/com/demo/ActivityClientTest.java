@@ -6,7 +6,9 @@
 package com.demo;
 
 import com.demo.client.ActivityClient;
+import com.demo.client.ActivitySearchClient;
 import com.demo.model.Activity;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -98,5 +100,22 @@ public class ActivityClientTest {
         
         client.delete("1234");
         
+    }
+    
+    @Test
+    public void testSearch(){
+        
+        ActivitySearchClient client = new ActivitySearchClient();
+        
+        String param = "description";
+        List<String> searchValues = new ArrayList<String>();
+        
+        searchValues.add("Swimming");
+        searchValues.add("Running");
+        
+        List<Activity> activities = client.search(param, searchValues);
+        
+        System.out.println(activities);
+        assertNotNull(activities);
     }
 }

@@ -23,5 +23,7 @@ public interface ActivityRepository {
     public Activity update(Activity activity);
 
     public void delete(String activityId);
+
+    public List<Activity> findByDescription(List<String> description);
     
 }
