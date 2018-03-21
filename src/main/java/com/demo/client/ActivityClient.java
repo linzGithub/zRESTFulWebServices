@@ -84,12 +84,11 @@ public class ActivityClient {
     public void delete(String activityId) {
         
         WebTarget target = client.target("http://localhost:8080/zRESTFulWebServices/webresources/");
-        
         Response response = target.path("activities/" + activityId).request(MediaType.APPLICATION_JSON).delete();
         
         if (response.getStatus() != 200) {
             
-            throw new RuntimeException(response.getStatus() + ": there was an error on the server.");
+            //throw new RuntimeException(response.getStatus() + ": there was an error on the server.");
         }
         
     }
