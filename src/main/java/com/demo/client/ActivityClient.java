@@ -64,4 +64,20 @@ public class ActivityClient {
         
         return response.readEntity(Activity.class);
     }
+
+    public Activity update(Activity activity) {
+        
+        WebTarget target = client.target("http://localhost:8080/zRESTFulWebServices/webresources/");
+        
+        Response response= target.path("activities/" + activity.getId())
+                .request(MediaType.APPLICATION_JSON)
+                .post(Entity.entity(activity, MediaType.APPLICATION_JSON));
+        
+        if (response.getStatus() != 200) {
+            
+            throw new RuntimeException(response.getStatus() + ": there was an error on the server.");
+        }
+        
+        return response.readEntity(Activity.class);
+    }
 }

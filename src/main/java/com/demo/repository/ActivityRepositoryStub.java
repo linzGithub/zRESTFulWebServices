@@ -66,5 +66,19 @@ public class ActivityRepositoryStub implements ActivityRepository {
         // database insertion put here
         
     }
-    
+
+    @Override
+    public Activity update(Activity activity) {
+        
+        //search database for activity with id
+        //select * from Activity where id = ?
+        // if rs size == 0
+        // insert into Activity table
+        // else
+        // update Activity
+        
+        return activity;
+        
+    }
+  
 }
