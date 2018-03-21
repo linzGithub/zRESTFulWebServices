@@ -6,6 +6,7 @@
 package com.demo.repository;
 
 import com.demo.model.Activity;
+import com.demo.model.ActivitySearch;
 import com.demo.model.User;
 import java.util.ArrayList;
 import java.util.List;
@@ -104,8 +105,25 @@ public class ActivityRepositoryStub implements ActivityRepository {
         return activities;
         
     }
-    
-    
-    
+
+    @Override
+    public List<Activity> findByConstraints(ActivitySearch search) {
+        
+        System.out.println(search.getDurationFrom());
+        
+        // select * from activities where description in ?
+        List<Activity> activities = new ArrayList<Activity>();
+        
+        Activity activity = new Activity();
+        activity.setId("2345");
+        activity.setDescription("swimming");
+        activity.setDuration(55);
+        
+        activities.add(activity);
+        
+        return activities;
+
+    }
+     
   
 }

@@ -8,6 +8,7 @@ package com.demo;
 import com.demo.client.ActivityClient;
 import com.demo.client.ActivitySearchClient;
 import com.demo.model.Activity;
+import com.demo.model.ActivitySearch;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -117,5 +118,29 @@ public class ActivityClientTest {
         
         System.out.println(activities);
         assertNotNull(activities);
+    }
+    
+    @Test
+    public void testSearchObject() {
+        
+        ActivitySearchClient client = new ActivitySearchClient();
+        
+        List<String> searchValues = new ArrayList<String>();
+        
+        searchValues.add("Biking");
+        searchValues.add("Running");
+        
+        ActivitySearch search = new ActivitySearch();
+        
+        search.setDescriptions(searchValues);
+        search.setDurationFrom(30);
+        search.setDurationTo(55);
+        
+        List<Activity> activities = client.search(search);
+        
+        System.out.println(activities);
+        
+        assertNotNull(activities);
+        
     }
 }

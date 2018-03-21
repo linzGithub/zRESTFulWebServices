@@ -6,6 +6,7 @@
 package com.demo.repository;
 
 import com.demo.model.Activity;
+import com.demo.model.ActivitySearch;
 import java.util.List;
 
 /**
@@ -25,5 +26,7 @@ public interface ActivityRepository {
     public void delete(String activityId);
 
     public List<Activity> findByDescription(List<String> description);
+
+    public List<Activity> findByConstraints(ActivitySearch search);
     
 }

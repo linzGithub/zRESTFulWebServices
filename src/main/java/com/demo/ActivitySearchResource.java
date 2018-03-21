@@ -6,10 +6,12 @@
 package com.demo;
 
 import com.demo.model.Activity;
+import com.demo.model.ActivitySearch;
 import com.demo.repository.ActivityRepository;
 import com.demo.repository.ActivityRepositoryStub;
 import java.util.List;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -42,5 +44,22 @@ public class ActivitySearchResource {
         
         return Response.ok().entity(new GenericEntity<List<Activity>>(activities) {}).build();
     }
+    
+    @POST
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public Response searchForActivities(ActivitySearch search) {
+        
+        System.out.println(search.getDescriptions() + ", " + search.getDurationFrom());
+        
+        List<Activity> activities = activityRepository.findByConstraints(search);
+        
+        if (activities == null || activities.size() <= 0) {
+            
+            return Response.status(Status.NOT_FOUND).build();
+        }
+        
+        return Response.ok().entity(new GenericEntity<List<Activity>> (activities) {}).build();
+    }
+    
     
 }
