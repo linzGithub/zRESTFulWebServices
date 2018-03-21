@@ -21,5 +21,7 @@ public interface ActivityRepository {
     public void create(Activity activity);
 
     public Activity update(Activity activity);
+
+    public void delete(String activityId);
     
 }

@@ -90,4 +90,13 @@ public class ActivityClientTest {
         ActivityClient client = new ActivityClient();
         activity = client.update(activity);
     }
+    
+    @Test
+    public void testDelete() {
+        
+        ActivityClient client = new ActivityClient();
+        
+        client.delete("1234");
+        
+    }
 }
