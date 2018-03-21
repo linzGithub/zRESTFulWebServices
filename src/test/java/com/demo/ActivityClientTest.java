@@ -9,6 +9,7 @@ import com.demo.client.ActivityClient;
 import com.demo.client.ActivitySearchClient;
 import com.demo.model.Activity;
 import com.demo.model.ActivitySearch;
+import com.demo.model.ActivitySearchType;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,6 +136,8 @@ public class ActivityClientTest {
         search.setDescriptions(searchValues);
         search.setDurationFrom(30);
         search.setDurationTo(55);
+        
+        search.setSearchType(ActivitySearchType.SEARCH_BY_DESCRIPTION);
         
         List<Activity> activities = client.search(search);
         

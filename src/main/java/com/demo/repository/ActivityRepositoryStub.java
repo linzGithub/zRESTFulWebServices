@@ -110,6 +110,7 @@ public class ActivityRepositoryStub implements ActivityRepository {
     public List<Activity> findByConstraints(ActivitySearch search) {
         
         System.out.println(search.getDurationFrom());
+        System.out.println(search.getSearchType());
         
         // select * from activities where description in ?
         List<Activity> activities = new ArrayList<Activity>();

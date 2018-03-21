@@ -17,6 +17,8 @@ public class ActivitySearch {
     private int durationTo;
     
     private List<String> descriptions;
+    
+    private ActivitySearchType searchType;
 
     /**
      * @return the durationFrom
@@ -58,6 +60,20 @@ public class ActivitySearch {
      */
     public void setDescriptions(List<String> descriptions) {
         this.descriptions = descriptions;
+    }
+
+    /**
+     * @return the searchType
+     */
+    public ActivitySearchType getSearchType() {
+        return searchType;
+    }
+
+    /**
+     * @param searchType the searchType to set
+     */
+    public void setSearchType(ActivitySearchType searchType) {
+        this.searchType = searchType;
     }
     
     
